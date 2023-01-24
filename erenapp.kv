@@ -1,0 +1,48 @@
+MainWidget:
+#:import Start_menu Start_menu
+
+<MainWidget>:
+     start_menu : start_menu
+     canvas:
+          Color:
+               rgba: 0,0,0,9
+          Rectangle:
+               size: self.size
+          Color:
+               rgba: 1,1,1,9
+          Line:
+               width: 2
+               circle:
+                    (self.center_x, self.center_y, min(self.width/10, self.height)/ 2)
+          Line:
+               width: 2
+               rectangle: (self.x   + 15 , self.y + 15  ,  self.width - 30 , self.height - 30 )
+          Line:
+               width: 2
+               points: (self.x  + self.width / 2 , self.height - 15 , self.x + self.width / 2  + self.x, self.y + 15)
+          Color:
+               rgba: 1,1,1,8
+          Rectangle:
+               pos: root.rec_pos_x ,  root.rec_pos_y
+               size: 50 , 120
+          Rectangle:
+               pos: self.width * .9 , root.rec_2_pos_y
+               size: 50 , 120
+          Color:
+               rgba: 1,1,1,9
+          Ellipse:
+               pos: root.ball_pos_x , root.ball_pos_y
+               size: 70,70
+     Label:
+          text: root.score_1
+          pos_hint: {"center_x" : .8 , "center_y": .7}
+          font_size: dp(60)
+          color: 1,1,1,9
+     Label:
+          text: root.score_2
+          pos_hint: {"center_x" : .2, "center_y": .7}
+          font_size: dp(60)
+          color: 1,1,1,9
+     Start_menu:
+          id : start_menu
+
